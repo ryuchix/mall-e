@@ -1,0 +1,50 @@
+{
+  "name": "malle",
+  "version": "1.0.0",
+  "description": "malle built in tailwindcss",
+  "main": "index.js",
+  "scripts": {
+    "build": "postcss src/assets/css/style.css -o assets/css/main.css",
+    "watch": "postcss src/assets/css/style.css -o assets/css/main.css --watch",
+    "serve": "cross-env NODE_ENV=development concurrently \"postcss src/assets/css/style.css -o assets/css/main.css --watch\" ",
+    "dev": "cross-env NODE_ENV=development postcss src/assets/css/style.css -o assets/css/main.css",
+    "prod": "cross-env NODE_ENV=production postcss src/assets/css/style.css -o assets/css/main.css",
+    "start": "npm run serve",
+    "buildjs": "cross-env NODE_ENV=production webpack"
+  },
+  "keywords": [
+    "tailwindcss",
+    "tailwind",
+    "tailwindUI"
+  ],
+  "author": "Randy Corpuz",
+  "website": "https://www.randyph.com",
+  "license": "MIT",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/typography": "^0.4.0",
+    "alpinejs": "^2.8.2",
+    "autoprefixer": "^10.1.0",
+    "hover.css": "^2.3.2",
+    "imagehover.css": "^2.0.0",
+    "jquery": "^3.6.0",
+    "jquery-mask-plugin": "^1.14.16",
+    "lazysizes": "^5.3.2",
+    "particles.js": "^2.0.0",
+    "postcss-nesting": "^7.0.1",
+    "tailwindcss": "^2.1.2"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3",
+    "cssnano": "^4.1.11",
+    "live-server": "^1.2.1",
+    "postcss": "^8.2.12",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.1",
+    "postcss-loader": "^5.2.0",
+    "postcss-preset-env": "^6.7.0",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
+  }
+}

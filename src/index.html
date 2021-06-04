@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mall E</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="../assets/css/main.css" />
+    </head>
+
+    <body class="bg-white" x-data="{ openMenu: false }">
+        <!-- Navbar section -->
+        <nav class="z-30 hidden bg-white fixed w-full md:flex justify-between items-center mx-auto px-8 h-24 py-2 space-x-10">
+
+            <div class="flex">
+                <a href="/">
+                    <div class="block">
+                        <img class="w-16 h-16" src="../assets/images/mall-logo.png" alt="Logo">
+                    </div>
+                </a>
+            </div>
+
+            <div class="flex flex-row md:space-x-24 space-x-10">
+                <select name="country" class="block w-52 py-2 px-3 border-gray-300 bg-white focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                    <option value="Singapore">Singapore</option>
+                    <option value="Philippines" selected>Philippines</option>
+                    <option value="India">India</option>
+                </select>
+    
+                <div class="flex w-96">
+                    <span class="p-1 bg-red-800 w-1 z-20"></span>
+                    <input name="field_name" class="pl-3 z-10 -ml-1 border px-4 py-2 w-full placeholder-gray-500 focus:outline-none focus:placeholder-gray-400" type="text" placeholder="Type mall or brand name" />
+                    <button type="submit" class="z-20 text-sm p-2 bg-red-800 text-white whitespace-no-wrap -ml-1 flex items-center">
+                        <svg class="svg-icon w-6 h-6 text-white fill-current" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M493.263264 986.120274c-271.803429 0-492.916363-221.112933-492.916363-492.89692 0-271.764544 221.112933-492.877477 492.916363-492.877477 271.764544 0 492.877477 221.112933 492.877477 492.877477C986.139717 765.008364 765.027807 986.120274 493.263264 986.120274zM493.263264 79.960123c-227.915873 0-413.30314 185.387267-413.30314 413.264255s185.387267 413.283698 413.30314 413.283698c227.875964 0 413.264255-185.407734 413.264255-413.283698S721.139228 79.960123 493.263264 79.960123z"  /><path d="M831.929254 775.629073l191.722602 191.722602-56.287997 56.287997-191.722602-191.722602 56.287997-56.287997Z"  /></svg>
+                    </button>
+                </div>
+    
+                <div class="auth-login">
+                    <button class="text-base p-2 bg-blue-600 text-white whitespace-no-wrap px-10">
+                        Register
+                    </button>
+                </div>
+            </div>
+        
+            <div class="flex flex-row items-center space-x-3 pl-5">
+                <div class="block relative rounded-full">
+                    <div class="total-cart bg-yellow-400 text-black absolute -left-3 -top-3 w-3 h-3 p-2 text-xs flex items-center justify-center rounded-full">
+                        <span>2</span>
+                    </div>
+                    <div class="total font-bold text-xl">
+                        <span class="currency">S$</span> <span class="amount">0.00</span>
+                    </div>
+                </div>
+                <div class="flex justify-end items-center relative">
+                    <div class="block">
+                        <div class="inline relative">
+                            <button aria-label="user" type="button" class="relative inline-flex items-center w-10 h-10 px-2 border rounded-full hover:shadow-sm bg-gray-200 text-white">
+                                <svg class="svg-icon w-6 h-6 fill-current" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M850.944 676.864c-52.224-26.624-94.208-35.84-126.976-44.032-41.984-10.24-67.584-15.36-91.136-49.152-25.6-35.84-2.048-72.704 39.936-128 14.336-18.432 28.672-37.888 39.936-57.344 18.432-32.768 23.552-59.392 15.36-80.896-4.096-12.288-12.288-21.504-24.576-29.696 13.312-76.8 4.096-136.192-28.672-176.128C642.048 71.68 586.752 51.2 512 51.2s-129.024 20.48-159.744 60.416c-31.744 39.936-38.912 99.328-23.552 177.152-11.264 7.168-19.456 17.408-23.552 28.672-8.192 21.504-3.072 48.128 15.36 80.896 11.264 19.456 25.6 38.912 38.912 57.344 41.984 55.296 65.536 92.16 39.936 129.024-22.528 32.768-50.176 38.912-95.232 49.152-35.84 7.168-78.848 17.408-132.096 44.032-87.04 43.008-126.976 136.192-118.784 276.48 0 10.24 8.192 18.432 19.456 18.432h876.544c11.264 0 19.456-8.192 20.48-19.456 6.144-140.288-33.792-233.472-118.784-276.48zM516.096 931.84H92.16c-2.048-111.616 30.72-185.344 97.28-218.112 48.128-24.576 88.064-32.768 122.88-40.96 47.104-10.24 88.064-19.456 120.832-65.536 45.056-63.488 0-123.904-39.936-176.128-13.312-17.408-26.624-35.84-36.864-53.248-15.36-28.672-14.336-41.984-12.288-47.104 1.024-2.048 3.072-8.192 16.384-13.312 10.24-4.096 15.36-14.336 12.288-23.552-17.408-71.68-13.312-124.928 12.288-157.696C407.552 107.52 450.56 92.16 512 92.16c62.464 0 106.496 15.36 130.048 45.056 26.624 32.768 32.768 86.016 17.408 157.696-2.048 10.24 3.072 19.456 13.312 23.552 13.312 5.12 15.36 11.264 16.384 13.312 2.048 5.12 3.072 18.432-12.288 47.104-9.216 17.408-23.552 35.84-36.864 53.248-39.936 53.248-84.992 113.664-39.936 176.128 31.744 46.08 70.656 55.296 114.688 65.536 32.768 7.168 69.632 16.384 117.76 39.936 65.536 32.768 98.304 106.496 97.28 218.112H516.096z"  /></svg>
+                                <div class="hor-line rounded-full w-5 h-5 bg-red-800 text-white flex justify-center absolute bottom-1 -right-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav class="z-30 flex flex-col bg-white fixed w-full md:hidden justify-between items-center py-2 space-y-2">
+            <div class="flex flex-row space-x-2 justify-between relative p-2 w-full items-center">
+                <div class="flex flex-row">
+                    <a href="/">
+                        <img class="w-20 h-20 object-cover" src="../assets/images/mall-logo.png" alt="Logo">
+                    </a>
+    
+                    <select name="country" class="block w-20 py-2 px-3 border-gray-300 bg-white focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                        <option value="Singapore">SG</option>
+                        <option value="Philippines" selected>PH</option>
+                        <option value="India">IN</option>
+                    </select>
+                </div>
+
+                <div class="auth-login">
+                    <button class="text-sm bg-blue-600 text-white whitespace-no-wrap px-3 py-2">
+                        Register
+                    </button>
+                </div>
+
+                <div class="flex flex-row items-center space-x-3 pl-5 pr-2">
+                    <div class="flex justify-end items-center relative">
+                        <div class="block">
+                            <div class="inline relative">
+                                <button aria-label="user" type="button" class="relative inline-flex items-center w-10 h-10 px-2 border rounded-full hover:shadow-sm bg-gray-200 text-white">
+                                    <svg class="svg-icon w-6 h-6 fill-current" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M850.944 676.864c-52.224-26.624-94.208-35.84-126.976-44.032-41.984-10.24-67.584-15.36-91.136-49.152-25.6-35.84-2.048-72.704 39.936-128 14.336-18.432 28.672-37.888 39.936-57.344 18.432-32.768 23.552-59.392 15.36-80.896-4.096-12.288-12.288-21.504-24.576-29.696 13.312-76.8 4.096-136.192-28.672-176.128C642.048 71.68 586.752 51.2 512 51.2s-129.024 20.48-159.744 60.416c-31.744 39.936-38.912 99.328-23.552 177.152-11.264 7.168-19.456 17.408-23.552 28.672-8.192 21.504-3.072 48.128 15.36 80.896 11.264 19.456 25.6 38.912 38.912 57.344 41.984 55.296 65.536 92.16 39.936 129.024-22.528 32.768-50.176 38.912-95.232 49.152-35.84 7.168-78.848 17.408-132.096 44.032-87.04 43.008-126.976 136.192-118.784 276.48 0 10.24 8.192 18.432 19.456 18.432h876.544c11.264 0 19.456-8.192 20.48-19.456 6.144-140.288-33.792-233.472-118.784-276.48zM516.096 931.84H92.16c-2.048-111.616 30.72-185.344 97.28-218.112 48.128-24.576 88.064-32.768 122.88-40.96 47.104-10.24 88.064-19.456 120.832-65.536 45.056-63.488 0-123.904-39.936-176.128-13.312-17.408-26.624-35.84-36.864-53.248-15.36-28.672-14.336-41.984-12.288-47.104 1.024-2.048 3.072-8.192 16.384-13.312 10.24-4.096 15.36-14.336 12.288-23.552-17.408-71.68-13.312-124.928 12.288-157.696C407.552 107.52 450.56 92.16 512 92.16c62.464 0 106.496 15.36 130.048 45.056 26.624 32.768 32.768 86.016 17.408 157.696-2.048 10.24 3.072 19.456 13.312 23.552 13.312 5.12 15.36 11.264 16.384 13.312 2.048 5.12 3.072 18.432-12.288 47.104-9.216 17.408-23.552 35.84-36.864 53.248-39.936 53.248-84.992 113.664-39.936 176.128 31.744 46.08 70.656 55.296 114.688 65.536 32.768 7.168 69.632 16.384 117.76 39.936 65.536 32.768 98.304 106.496 97.28 218.112H516.096z"  /></svg>
+                                    <div class="hor-line rounded-full w-5 h-5 bg-red-800 text-white flex justify-center absolute bottom-1 -right-2 items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full relative flex flex-row p-2">
+                <span class="p-1 bg-red-800 w-1 z-20"></span>
+                <input name="field_name" class="pl-3 z-10 -ml-1 border px-4 py-2 w-full placeholder-gray-500 focus:outline-none focus:placeholder-gray-400" type="text" placeholder="Type mall or brand name" />
+                <button type="submit" class="z-20 text-sm p-2 bg-red-800 text-white whitespace-no-wrap -ml-1 flex items-center">
+                    <svg class="svg-icon w-6 h-6 text-white fill-current" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M493.263264 986.120274c-271.803429 0-492.916363-221.112933-492.916363-492.89692 0-271.764544 221.112933-492.877477 492.916363-492.877477 271.764544 0 492.877477 221.112933 492.877477 492.877477C986.139717 765.008364 765.027807 986.120274 493.263264 986.120274zM493.263264 79.960123c-227.915873 0-413.30314 185.387267-413.30314 413.264255s185.387267 413.283698 413.30314 413.283698c227.875964 0 413.264255-185.407734 413.264255-413.283698S721.139228 79.960123 493.263264 79.960123z"  /><path d="M831.929254 775.629073l191.722602 191.722602-56.287997 56.287997-191.722602-191.722602 56.287997-56.287997Z"  /></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero section -->
+        <div class="hero relative z-0 flex justify-start items-center">
+            <div class="relative w-full">
+                <p class="item-1 flex flex-col space-y-6">
+                    Going to mall?
+                    <button class="bg-yellow-600 text-white text-base py-2 px-4">View Promotions</button>
+                </p>
+                <p class="item-2">50% discount in all brands!</p>
+                <p class="item-3">Get free voucher.</p>
+            </div>
+        </div>
+
+        <!-- Brands section -->
+        <div class="brands flex md:flex-row space-x-4 justify-center py-10 h-auto flex-col space-y-3">
+            <div class="flex flex-row items-center justify-evenly space-x-4">
+                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg">
+                    <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/binalot-min.png" alt="binalot"></div>
+                    <div class="text">1 for 1</div>
+                </div>
+                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg">
+                    <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/cinabon-min.jpeg" alt="cinabon"></div>
+                    <div class="text">50%</div>
+                </div>
+            </div>
+            <div class="flex flex-row items-center justify-evenly space-x-4">
+                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg">
+                    <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/goldilocks-min.jpeg" alt="goldilocks"></div>
+                    <div class="text">offer</div>
+                </div>
+                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg">
+                    <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/greenp-min.png" alt="greenp"></div>
+                    <div class="text">Promotions</div>
+                </div>
+            </div>
+            <div class="flex flex-row items-center justify-evenly space-x-4">
+                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg">
+                    <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/hawker-min.jpeg" alt="hawker"></div>
+                    <div class="text">Special</div>
+                </div>
+                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg">
+                    <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/kenny-min.jpeg" alt="kenny"></div>
+                    <div class="text">90%</div>
+                </div>
+            </div>
+            <div class="flex flex-row items-center justify-evenly space-x-4">
+                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full px-5 py-3 group cursor-pointer hover:shadow-lg">
+                    <div class="text">View all</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category section -->
+        <div class="category-section py-10">
+            <h2 class="title-heading text-4xl font-bold flex flex-col items-center text-center w-full">Promotions by Category</h2>
+
+            <div class="select-categories flex justify-center mt-10">
+                <select name="cat" class="flex justify-center w-60 border rounded-l py-2 px-3 border-gray-300 bg-white focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                    <option value="">Select Category</option>
+                </select>
+            </div>
+
+            <div class="categories flex flex-col items-center justify-center md:flex-row md:space-x-4 space-y-6 md:space-y-0 mt-10">
+                <a href="javascript:void(0)" class="group">
+                    <div class="category flex flex-col space-y-3 justify-center items-center">
+                        <img class="cat-image object-cover w-11/12 md:w-56 h-40 opacity-80 group-hover:opacity-100 transition-all" src="../assets/images/cakes-min.jpeg" alt="Cakes">
+                        <div class="cat-title md:text-base text-lg">Cakes</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="group">
+                    <div class="category flex flex-col space-y-3 justify-center items-center">
+                        <img class="cat-image object-cover w-11/12 md:w-56 h-40 opacity-80 group-hover:opacity-100 transition-all" src="../assets/images/pizza-min.jpeg" alt="Pizza">
+                        <div class="cat-title md:text-base text-lg">Pizza</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="group">
+                    <div class="category flex flex-col space-y-3 justify-center items-center">
+                        <img class="cat-image object-cover w-11/12 md:w-56 h-40 opacity-80 group-hover:opacity-100 transition-all" src="../assets/images/donuts-min.jpeg" alt="Donuts">
+                        <div class="cat-title md:text-base text-lg">Donuts</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="group">
+                    <div class="category flex flex-col space-y-3 justify-center items-center">
+                        <img class="cat-image object-cover w-11/12 md:w-56 h-40 opacity-80 group-hover:opacity-100 transition-all" src="../assets/images/bubble-tea-min.jpeg" alt="Bubble Tea">
+                        <div class="cat-title md:text-base text-lg">Bubble Tea</div>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="hover:text-black flex md:self-start self:center items-center bg-gray-300 md:h-40 w-11/12 md:w-max px-2 text-white">
+                    <div class="category text-center w-full p-3">
+                        View All
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Featured malls section -->
+        <div class="malls-section py-10">
+            <h2 class="title-heading text-4xl font-bold flex flex-col items-center text-center w-full">Featured Malls</h2>
+
+            <div class="select-malls flex justify-center mt-10">
+                <select name="mall" class="flex justify-center w-60 border rounded-l py-2 px-3 border-gray-300 bg-white focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                    <option value="">Select Meal</option>
+                </select>
+            </div>
+
+            <div class="malls flex flex-col items-center justify-center md:flex-row md:space-x-4 space-y-10 md:space-y-0 mt-10">
+                <div class="mall flex flex-col hover space-y-2 group w-11/12 md:w-auto">
+                    <div class="flex flex-row mall-details space-x-4">
+                        <a href="javascript:void(0)"><img class="mall-image w-12" src="../assets/images/greenp-min.png" alt="goldilocks"></a>
+                        <div class="mall-name flex flex-col">
+                            <div class="name text-base text-black">Jack's Place</div>
+                            <div class="sub-name text-xs text-gray-400">River Valley</div>
+                        </div>
+                    </div>
+                    <div class="img relative w-auto">
+                        <a href="javascript:void(0)"><img class="mall-featured-image md:w-80 object-cover opacity-80 group-hover:opacity-100 z-10 transition-all" src="../assets/images/res1-min.jpeg" alt="Res 1"></a>
+                        <div class="shares absolute -bottom-3 right-2 flex flex-row z-20 space-x-3">
+                            <div class="share z-20 bg-white p-2 rounded-full text-red-800 border border-gray-300 hover:bg-gray-300">
+                                <a href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="hearts z-20 bg-white p-2 rounded-full text-red-800 border border-gray-300 hover:bg-gray-300">
+                                <a href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infos text-sm pt-2">1 Merchants | 1 Promotions</div>
+                </div>
+
+                <div class="mall flex flex-col hover space-y-2 group w-11/12 md:w-auto">
+                    <div class="flex flex-row mall-details space-x-4">
+                        <a href="javascript:void(0)"><img class="mall-image w-12" src="../assets/images/greenp-min.png" alt="goldilocks"></a>
+                        <div class="mall-name flex flex-col">
+                            <div class="name text-base text-black">Jack's Place</div>
+                            <div class="sub-name text-xs text-gray-400">River Valley</div>
+                        </div>
+                    </div>
+                    <div class="img relative w-auto">
+                        <a href="javascript:void(0)"><img class="mall-featured-image md:w-80 object-cover opacity-80 group-hover:opacity-100 z-10 transition-all" src="../assets/images/res1-min.jpeg" alt="Res 1"></a>
+                        <div class="shares absolute -bottom-3 right-2 flex flex-row z-20 space-x-3">
+                            <div class="share z-20 bg-white p-2 rounded-full text-red-800 border border-gray-300 hover:bg-gray-300">
+                                <a href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="hearts z-20 bg-white p-2 rounded-full text-red-800 border border-gray-300 hover:bg-gray-300">
+                                <a href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infos text-sm pt-2">1 Merchants | 1 Promotions</div>
+                </div>
+
+                <div class="mall flex flex-col hover space-y-2 group w-11/12 md:w-auto">
+                    <div class="flex flex-row mall-details space-x-4">
+                        <a href="javascript:void(0)"><img class="mall-image w-12" src="../assets/images/greenp-min.png" alt="goldilocks"></a>
+                        <div class="mall-name flex flex-col">
+                            <div class="name text-base text-black">Jack's Place</div>
+                            <div class="sub-name text-xs text-gray-400">River Valley</div>
+                        </div>
+                    </div>
+                    <div class="img relative w-auto">
+                        <a href="javascript:void(0)"><img class="mall-featured-image md:w-80 object-cover opacity-80 group-hover:opacity-100 z-10 transition-all" src="../assets/images/res1-min.jpeg" alt="Res 1"></a>
+                        <div class="shares absolute -bottom-3 right-2 flex flex-row z-20 space-x-3">
+                            <div class="share z-20 bg-white p-2 rounded-full text-red-800 border border-gray-300 hover:bg-gray-300">
+                                <a href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="hearts z-20 bg-white p-2 rounded-full text-red-800 border border-gray-300 hover:bg-gray-300">
+                                <a href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infos text-sm pt-2">1 Merchants | 1 Promotions</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mall happenings -->
+        <div class="malls-happenings-section py-10 relative">
+            <h2 class="title-heading text-4xl font-bold flex flex-col items-center text-center w-full">Mall Happenings</h2>
+
+            <div class="flex md:flex-row flex-col md:space-x-4 space-x-0 space-y-4 md:space-y-0 mt-10 justify-center">
+                <div class="flex flex-col md:w-80 w-11/12 self-center">
+                    <button class="relative bg-yellow-400 text-white hover:bg-yellow-600 py-2 px-14 rounded-full text-lg shadow-xl w-4/5 flex justify-center self-center z-10 top-5">
+                        Events
+                    </button>
+                    <div class="flex">
+                        <figure class="imghvr-zoom-in rounded-md">
+                            <img class="h-96 object-cover rounded-md cursor-pointer" src="../assets/images/alcohol.png" alt="example-image">
+                            <figcaption class="w-4/5 flex items-center flex-col bg-black bg-opacity-70 space-y-4">
+                              <h3 class="text-lg">Johnny Walker</h3>
+                              <p class="text-xs text-center">Red Label, Black Label, Blue Label, Red Label</p>
+                              <button class="bg-yellow-400 text-black py-1 px-3 hover:bg-yellow-600 hover:text-white">View Prices</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="flex flex-col md:w-80 w-11/12 self-center">
+                    <button class="relative bg-yellow-400 text-white hover:bg-yellow-600 py-2 px-14 rounded-full text-lg shadow-xl w-4/5 flex justify-center self-center z-10 top-5">
+                        Events
+                    </button>
+                    <div class="flex">
+                        <figure class="imghvr-zoom-in rounded-md">
+                            <img class="h-96 object-cover rounded-md cursor-pointer" src="../assets/images/alcohol.png" alt="example-image">
+                            <figcaption class="w-4/5 flex items-center flex-col bg-black bg-opacity-70 space-y-4">
+                              <h3 class="text-lg">Johnny Walker</h3>
+                              <p class="text-xs text-center">Red Label, Black Label, Blue Label, Red Label</p>
+                              <button class="bg-yellow-400 text-black py-1 px-3 hover:bg-yellow-600 hover:text-white">View Prices</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="flex flex-col md:w-80 w-11/12 self-center">
+                    <button class="relative bg-yellow-400 text-white hover:bg-yellow-600 py-2 px-14 rounded-full text-lg shadow-xl w-4/5 flex justify-center self-center z-10 top-5">
+                        Events
+                    </button>
+                    <div class="flex">
+                        <figure class="imghvr-zoom-in rounded-md">
+                            <img class="h-96 object-cover rounded-md cursor-pointer" src="../assets/images/alcohol.png" alt="example-image">
+                            <figcaption class="w-4/5 flex items-center flex-col bg-black bg-opacity-70 space-y-4">
+                              <h3 class="text-lg">Johnny Walker</h3>
+                              <p class="text-xs text-center">Red Label, Black Label, Blue Label, Red Label</p>
+                              <button class="bg-yellow-400 text-black py-1 px-3 hover:bg-yellow-600 hover:text-white">View Prices</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Featured malls section -->
+        <div class="merchants-section py-10">
+            <h2 class="title-heading text-4xl font-bold flex flex-col items-center text-center w-full">Featured Merchants</h2>
+
+            <div class="select-merchants flex justify-center mt-10">
+                <select name="merchant" class="flex justify-center w-60 border rounded-l py-2 px-3 border-gray-300 bg-white focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                    <option value="">Select Merchants</option>
+                </select>
+            </div>
+
+            <div class="merchants flex flex-col items-center justify-center md:flex-row md:space-x-4 space-y-10 md:space-y-0 mt-10">
+                <div class="merchant flex flex-col hover space-y-2 group w-11/12 md:w-auto">
+                    <div class="flex flex-row merchant-details space-x-4">
+                        <a href="javascript:void(0)"><img class="merchant-image w-12" src="../assets/images/greenp-min.png" alt="goldilocks"></a>
+                        <div class="merchant-name flex flex-col">
+                            <div class="name text-base text-black">Jack's Place</div>
+                            <div class="sub-name text-xs text-gray-400">River Valley</div>
+                        </div>
+                    </div>
+                    <div class="img relative w-auto">
+                        <a href="javascript:void(0)"><img class="merchant-featured-image md:w-80 object-cover opacity-80 group-hover:opacity-100 z-10 transition-all" src="../assets/images/res1-min.jpeg" alt="Res 1"></a>
+                        <div class="shares absolute -bottom-3 right-2 flex flex-row z-20 space-x-3">
+                            <div class="share z-20 bg-white p-2 rounded-full text-red-800 border border-gray-300">
+                                <a href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="hearts z-20 bg-white p-2 rounded-full text-red-800 border border-gray-300   ">
+                                <a href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infos text-sm pt-2">1 Merchants | 1 Promotions</div>
+                </div>
+
+                <div class="merchant flex flex-col hover space-y-2 group w-11/12 md:w-auto">
+                    <div class="flex flex-row merchant-details space-x-4">
+                        <a href="javascript:void(0)"><img class="merchant-image w-12" src="../assets/images/greenp-min.png" alt="goldilocks"></a>
+                        <div class="merchant-name flex flex-col">
+                            <div class="name text-base text-black">Jack's Place</div>
+                            <div class="sub-name text-xs text-gray-400">River Valley</div>
+                        </div>
+                    </div>
+                    <div class="img relative w-auto">
+                        <a href="javascript:void(0)"><img class="merchant-featured-image md:w-80 object-cover opacity-80 group-hover:opacity-100 z-10 transition-all" src="../assets/images/res1-min.jpeg" alt="Res 1"></a>
+                        <div class="shares absolute -bottom-3 right-2 flex flex-row z-20 space-x-3">
+                            <div class="share z-20 bg-white p-2 rounded-full text-red-800 border border-gray-300">
+                                <a href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="hearts z-20 bg-white p-2 rounded-full text-red-800 border border-gray-300   ">
+                                <a href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infos text-sm pt-2">1 Merchants | 1 Promotions</div>
+                </div>
+
+                <div class="merchant flex flex-col hover space-y-2 group w-11/12 md:w-auto">
+                    <div class="flex flex-row merchant-details space-x-4">
+                        <a href="javascript:void(0)"><img class="merchant-image w-12" src="../assets/images/greenp-min.png" alt="goldilocks"></a>
+                        <div class="merchant-name flex flex-col">
+                            <div class="name text-base text-black">Jack's Place</div>
+                            <div class="sub-name text-xs text-gray-400">River Valley</div>
+                        </div>
+                    </div>
+                    <div class="img relative w-auto">
+                        <a href="javascript:void(0)"><img class="merchant-featured-image md:w-80 object-cover opacity-80 group-hover:opacity-100 z-10 transition-all" src="../assets/images/res1-min.jpeg" alt="Res 1"></a>
+                        <div class="shares absolute -bottom-3 right-2 flex flex-row z-20 space-x-3">
+                            <div class="share z-20 bg-white p-2 rounded-full text-red-800 border border-gray-300">
+                                <a href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="hearts z-20 bg-white p-2 rounded-full text-red-800 border border-gray-300   ">
+                                <a href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infos text-sm pt-2">1 Merchants | 1 Promotions</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- promotions section -->
+        <div class="promotions flex-col md:flex-row bg-gray-100">
+            <div class="flex flex-col md:flex-row">
+                <div class="left flex flex-col md:space-y-4 space-y-6 md:py-20 md:pl-32 py-10 px-4 md:w-1/2 w-full">
+                    <div class="flex flex-col">
+                        <div class="text-xl">Have you got the app?</div>
+                        <div class="text-sm">Get yours now - available on the IOS and Android app store!</div>
+                    </div>
+    
+                    <img src="../assets/images/mall-logo.png" alt="Logo" class="w-32 cursor-pointer">
+                    <div class="flex flex-row -ml-3 p-0">
+                        <img src="../assets/images/appstore.png" alt="App store" class="md:w-2/12 w-5/12 cursor-pointer">
+                        <img src="../assets/images/playstore.png" alt="Play store" class="md:w-2/12 w-5/12 cursor-pointer">
+                    </div>
+                </div>
+                <div class="right flex md:w-1/2 w-full justify-end">
+                    <img src="../assets/images/iphone-stock-min.png" alt="ihone" class="object-cover">
+                </div>
+            </div>
+        </div>
+
+        <!-- footer section -->
+        <hr>
+        <div class="flex flex-col md:flex-row md:py-20 md:px-32 py-10 px-4 md:space-y-0 space-y-6 justify-between">
+            <div class="border rounded p-4 footer-country">
+                <div class="flex flex-col space-y-2">
+                    <div class="country">Singapore</div>
+                    <div class="flag flex flex-row space-x-4">
+                        <img src="http://beta.the-gypsy.net/images/singapore-flag.png" alt="Singapore">
+                        <div>05:17:39</div>
+                    </div>
+                </div>
+            </div>
+            <div class="socials flex flex-col space-y-2">
+                <div class="social-title uppercase font-bold text-lg">Get connected</div>
+                <div class="social-icons flex flex-row space-x-3">
+                    <a href="javascript:void(0)" class="opacity-90 hover:opacity-100">
+                        <div class="icon facebook rounded-full w-9 h-9 flex items-center justify-center text-white">
+                            <svg class="svg-icon w-5 h-5 fill-current" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M767.414857 6.875429l0 150.820571-89.746286 0q-49.152 0-66.267429 20.553143t-17.115429 61.732571l0 108.032 167.424 0-22.308571 169.179429-145.115429 0 0 433.737143-174.884571 0 0-433.737143-145.700571 0 0-169.179429 145.700571 0 0-124.562286q0-106.276571 59.465143-164.864t158.281143-58.587429q83.968 0 130.267429 6.875429z"  /></svg>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="opacity-90 hover:opacity-100">
+                        <div class="icon google-plus rounded-full w-9 h-9 flex items-center justify-center text-white">
+                            <svg class="svg-icon w-6 h-6 fill-current" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M981.333333 469.333333h-85.333333V384h-85.333333v85.333333h-85.333334v85.333334h85.333334v85.333333h85.333333v-85.333333h85.333333M341.333333 469.333333v102.4h170.666667c-8.533333 42.666667-51.2 128-170.666667 128-102.4 0-183.466667-85.333333-183.466666-187.733333 0-102.4 81.066667-187.733333 183.466666-187.733333 59.733333 0 98.133333 25.6 119.466667 46.933333l81.066667-76.8C490.666667 243.2 422.4 213.333333 341.333333 213.333333c-166.4 0-298.666667 132.266667-298.666666 298.666667s132.266667 298.666667 298.666666 298.666667c170.666667 0 285.866667-119.466667 285.866667-290.133334 0-21.333333 0-34.133333-4.266667-51.2H341.333333z" fill="" /></svg>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="opacity-90 hover:opacity-100">
+                        <div class="icon instagram rounded-full w-9 h-9 flex items-center justify-center text-white">
+                            <svg class="svg-icon w-6 h-6 fill-current" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M332.8 85.333333h358.4C827.733333 85.333333 938.666667 196.266667 938.666667 332.8v358.4a247.466667 247.466667 0 0 1-247.466667 247.466667H332.8C196.266667 938.666667 85.333333 827.733333 85.333333 691.2V332.8A247.466667 247.466667 0 0 1 332.8 85.333333m-8.533333 85.333334A153.6 153.6 0 0 0 170.666667 324.266667v375.466666C170.666667 784.64 239.36 853.333333 324.266667 853.333333h375.466666a153.6 153.6 0 0 0 153.6-153.6V324.266667C853.333333 239.36 784.64 170.666667 699.733333 170.666667H324.266667m411.733333 64a53.333333 53.333333 0 0 1 53.333333 53.333333A53.333333 53.333333 0 0 1 736 341.333333 53.333333 53.333333 0 0 1 682.666667 288a53.333333 53.333333 0 0 1 53.333333-53.333333M512 298.666667a213.333333 213.333333 0 0 1 213.333333 213.333333 213.333333 213.333333 0 0 1-213.333333 213.333333 213.333333 213.333333 0 0 1-213.333333-213.333333 213.333333 213.333333 0 0 1 213.333333-213.333333m0 85.333333a128 128 0 0 0-128 128 128 128 0 0 0 128 128 128 128 0 0 0 128-128 128 128 0 0 0-128-128z" fill="" /></svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <div class="uppercase font-bold text-lg">Contact us</div>
+                <div class="text-base text-blue-300">help@gmail.com</div>
+            </div>
+
+            <div class="website flex flex-col space-y-4">
+                <img src="../assets/images/mall-logo.png" alt="logo" class="w-40">
+                <a href="javascript:void(0)" class="group">
+                    <div class="rounded-full border border-gray-300 py-2 px-8 group-hover:bg-gray-300 text-sm group-hover:text-white">
+                        Go to www.google.com
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <script src="../assets/js/main.js"></script>
+    </body>
+</html>
