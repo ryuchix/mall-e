@@ -123,3 +123,11 @@ html,body {
 .swiper-slide {
     @apply md:w-max !important;
 }
+
+.categories-container {
+    .view-all {
+        @apply h-40;
+        @apply sm:w-min;
+        @apply w-auto;
+    }
+}

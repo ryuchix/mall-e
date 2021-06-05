@@ -128,7 +128,7 @@
 
         <!-- Brands section -->
         <!-- mobile slides -->
-        <div class=" flex swiper-container brands-container">
+        <div class="flex swiper-container brands-container">
             <div class="swiper-wrapper mt-5 block md:flex items-center justify-center w-auto md:w-full md:space-x-4">
                 <div class="swiper-slide flex justify-center">
                     <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg m-7 md:m-0">
@@ -174,43 +174,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="brands hidden md:flex md:flex-row space-x-4 justify-center py-10 h-auto flex-col space-y-3">
-            <div class="flex flex-row items-center justify-evenly space-x-4">
-                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg">
-                    <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/binalot-min.png" alt="binalot"></div>
-                    <div class="text">1 for 1</div>
-                </div>
-                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg">
-                    <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/cinabon-min.jpeg" alt="cinabon"></div>
-                    <div class="text">50%</div>
-                </div>
-            </div>
-            <div class="flex flex-row items-center justify-evenly space-x-4">
-                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg">
-                    <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/goldilocks-min.jpeg" alt="goldilocks"></div>
-                    <div class="text">offer</div>
-                </div>
-                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg">
-                    <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/greenp-min.png" alt="greenp"></div>
-                    <div class="text">Promotions</div>
-                </div>
-            </div>
-            <div class="flex flex-row items-center justify-evenly space-x-4">
-                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg">
-                    <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/hawker-min.jpeg" alt="hawker"></div>
-                    <div class="text">Special</div>
-                </div>
-                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg">
-                    <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/kenny-min.jpeg" alt="kenny"></div>
-                    <div class="text">90%</div>
-                </div>
-            </div>
-            <div class="flex flex-row items-center justify-evenly space-x-4">
-                <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full px-5 py-3 group cursor-pointer hover:shadow-lg">
-                    <div class="text">View all</div>
-                </div>
-            </div>
-        </div> -->
 
         <!-- Category section -->
         <div class="category-section py-10">
@@ -222,39 +185,41 @@
                 </select>
             </div>
 
-            <div class="categories flex flex-col items-center justify-center md:flex-row md:space-x-4 space-y-6 md:space-y-0 mt-10">
-                <a href="javascript:void(0)" class="group">
-                    <div class="category flex flex-col space-y-3 justify-center items-center">
-                        <img class="cat-image object-cover w-11/12 md:w-56 h-40 opacity-80 group-hover:opacity-100 transition-all" src="../assets/images/cakes-min.jpeg" alt="Cakes">
-                        <div class="cat-title md:text-base text-lg">Cakes</div>
-                    </div>
-                </a>
-                <a href="javascript:void(0)" class="group">
-                    <div class="category flex flex-col space-y-3 justify-center items-center">
-                        <img class="cat-image object-cover w-11/12 md:w-56 h-40 opacity-80 group-hover:opacity-100 transition-all" src="../assets/images/pizza-min.jpeg" alt="Pizza">
-                        <div class="cat-title md:text-base text-lg">Pizza</div>
-                    </div>
-                </a>
-                <a href="javascript:void(0)" class="group">
-                    <div class="category flex flex-col space-y-3 justify-center items-center">
-                        <img class="cat-image object-cover w-11/12 md:w-56 h-40 opacity-80 group-hover:opacity-100 transition-all" src="../assets/images/donuts-min.jpeg" alt="Donuts">
-                        <div class="cat-title md:text-base text-lg">Donuts</div>
-                    </div>
-                </a>
-                <a href="javascript:void(0)" class="group">
-                    <div class="category flex flex-col space-y-3 justify-center items-center">
-                        <img class="cat-image object-cover w-11/12 md:w-56 h-40 opacity-80 group-hover:opacity-100 transition-all" src="../assets/images/bubble-tea-min.jpeg" alt="Bubble Tea">
-                        <div class="cat-title md:text-base text-lg">Bubble Tea</div>
-                    </div>
-                </a>
-                <a href="javascript:void(0)" class="hover:text-black flex md:self-start self:center items-center bg-gray-300 md:h-40 w-11/12 md:w-max px-2 text-white">
-                    <div class="category text-center w-full p-3">
-                        View All
-                    </div>
-                </a>
+            <div class="categories flex md:items-center md:justify-center flex-row md:space-x-4 space-y-6 md:space-y-0 mt-10 swiper-container categories-container">
+                <div class="swiper-wrapper block md:flex items-center justify-center w-auto md:w-full md:space-x-4">
+                    <a href="javascript:void(0)" class="group swiper-slide flex justify-center">
+                        <div class="category flex flex-col space-y-3 justify-center items-center">
+                            <img class="cat-image object-cover w-11/12 md:w-56 h-40 opacity-80 group-hover:opacity-100 transition-all" src="../assets/images/cakes-min.jpeg" alt="Cakes">
+                            <div class="cat-title md:text-base text-lg">Cakes</div>
+                        </div>
+                    </a>
+
+                    <a href="javascript:void(0)" class="group swiper-slide flex justify-center">
+                        <div class="category flex flex-col space-y-3 justify-center items-center">
+                            <img class="cat-image object-cover w-11/12 md:w-56 h-40 opacity-80 group-hover:opacity-100 transition-all" src="../assets/images/pizza-min.jpeg" alt="Pizza">
+                            <div class="cat-title md:text-base text-lg">Pizza</div>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="group swiper-slide flex justify-center">
+                        <div class="category flex flex-col space-y-3 justify-center items-center">
+                            <img class="cat-image object-cover w-11/12 md:w-56 h-40 opacity-80 group-hover:opacity-100 transition-all" src="../assets/images/donuts-min.jpeg" alt="Donuts">
+                            <div class="cat-title md:text-base text-lg">Donuts</div>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="group swiper-slide flex justify-center">
+                        <div class="category flex flex-col space-y-3 justify-center items-center">
+                            <img class="cat-image object-cover w-11/12 md:w-56 h-40 opacity-80 group-hover:opacity-100 transition-all" src="../assets/images/bubble-tea-min.jpeg" alt="Bubble Tea">
+                            <div class="cat-title md:text-base text-lg">Bubble Tea</div>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="swiper-slide justify-center hover:text-black flex self-start self:center items-center bg-gray-300 h-40 w-min md:w-max px-2 text-white view-all">
+                        <div class="category text-center w-full p-3">
+                            View All
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
-
         <!-- Featured malls section -->
         <div class="malls-section py-10">
             <h2 class="title-heading text-4xl font-bold flex flex-col items-center text-center w-full">Featured Malls</h2>
