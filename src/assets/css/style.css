@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,600');
 @import 'imagehover.css/css/imagehover.css';
 @import 'swiper/swiper-bundle.css';
+@import '@splidejs/splide/dist/css/splide.min.css';
 
 html,body {
     scroll-behavior: smooth;
@@ -115,20 +116,6 @@ html,body {
     }
 }
 
-.brands-container,
-.categories-container,
-.malls-container,
-.malls-happenings-container {
-    .swiper-wrapper {
-        @apply w-auto;
-        @apply md:w-full;
-    }
-    
-    .swiper-slide {
-        @apply md:w-max !important;
-    }
-}
-
 .categories-container {
     .view-all {
         @apply h-40;
@@ -137,8 +124,19 @@ html,body {
     }
 }
 
-.malls-happenings-container {
-    .swiper-slide {
-        @apply md:w-80 !important;
+.brands-container {
+    img {
+        min-width: 3rem;
     }
+}
+
+.splide__list {
+    -webkit-transform:translateX(0);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+}
+
+.splide__track {
+    margin-right: 10px;
+    padding-left: 10px;
 }
