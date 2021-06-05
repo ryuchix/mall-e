@@ -1,90 +1,5 @@
 import Swiper from 'swiper';
 
-
-// const swiper = new Swiper(".brands-container", {
-//     direction: 'horizontal',
-//     slidesPerView: 1,
-//     spaceBetween: 1,
-//     breakpoints: {
-//         480: {
-//             slidesPerView: 1,
-//             spaceBetween: 10,
-//         },
-//         640: {
-//             slidesPerView: 2,
-//             spaceBetween: 10,
-//         },
-//         768: {
-//             slidesPerView: 7,
-//             spaceBetween: 10,
-//         },
-//         1024: {
-//             slidesPerView: 7,
-//             spaceBetween: 10,
-//         },
-//       },
-// });
-var init = false;
-var swiper = Swiper;
-var swiper2 = Swiper;
-
-function swiperMode() {
-    let mobile = window.matchMedia('(min-width: 0px) and (max-width: 768px)');
-    let tablet = window.matchMedia('(min-width: 769px) and (max-width: 1024px)');
-    let desktop = window.matchMedia('(min-width: 1025px)');
-
-    // Enable (for mobile)
-    if(mobile.matches) {
-        if (!init) {
-            init = true;
-            swiper = new Swiper('.brands-container', {
-                slidesPerView: 1,
-                loop: true,
-                spaceBetween: 10,
-                direction: 'horizontal',
-
-                breakpoints: {
-                    767: {
-                        slidesPerView: 1,
-                        spaceBetween: 10,
-                    }
-
-                }
-            });
-            swiper2 = new Swiper('.categories-container', {
-                slidesPerView: 1,
-                loop: true,
-                spaceBetween: 0,
-                direction: 'horizontal',
-
-                breakpoints: {
-                    767: {
-                        slidesPerView: 1,
-                        spaceBetween: 10,
-                    }
-
-                }
-
-            });
-        }
-
-    }
-
-    // Disable (for tablet)
-    else if(tablet.matches) {
-        swiper.destroy();
-        swiper2.destroy();
-        init = false;
-    }
-
-    // Disable (for desktop)
-    else if(desktop.matches) {
-        swiper.destroy();
-        swiper2.destroy();
-        init = false;
-    }
-}
-
 /* On Load
 **************************************************************/
 window.addEventListener('load', function() {
@@ -96,3 +11,46 @@ window.addEventListener('load', function() {
 window.addEventListener('resize', function() {
     swiperMode();
 });
+
+var init = false;
+var swiper = Swiper;
+
+function swiperMode() {
+    let mobile = window.matchMedia('(min-width: 0px) and (max-width: 768px)');
+    let tablet = window.matchMedia('(min-width: 769px) and (max-width: 1024px)');
+    let desktop = window.matchMedia('(min-width: 1025px)');
+
+    // Enable (for mobile)
+    if(mobile.matches) {
+        if (!init) {
+            init = true;
+            swiper = new Swiper('.swiper-container', {
+                slidesPerView: 3,
+                loop: true,
+                spaceBetween: 0,
+                direction: 'horizontal',
+
+                breakpoints: {
+                    767: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
+                    }
+
+                }
+            });
+        }
+
+    }
+
+    // Disable (for tablet)
+    else if(tablet.matches) {
+        swiper.destroy();
+        init = false;
+    }
+
+    // Disable (for desktop)
+    else if(desktop.matches) {
+        swiper.destroy();
+        init = false;
+    }
+}

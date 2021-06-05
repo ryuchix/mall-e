@@ -115,13 +115,18 @@ html,body {
     }
 }
 
-.swiper-wrapper {
-    @apply w-auto;
-    @apply md:w-full;
-}
-
-.swiper-slide {
-    @apply md:w-max !important;
+.brands-container,
+.categories-container,
+.malls-container,
+.malls-happenings-container {
+    .swiper-wrapper {
+        @apply w-auto;
+        @apply md:w-full;
+    }
+    
+    .swiper-slide {
+        @apply md:w-max !important;
+    }
 }
 
 .categories-container {
@@ -129,5 +134,11 @@ html,body {
         @apply h-40;
         @apply sm:w-min;
         @apply w-auto;
+    }
+}
+
+.malls-happenings-container {
+    .swiper-slide {
+        @apply md:w-80 !important;
     }
 }
