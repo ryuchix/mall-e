@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="../assets/css/main.css" />
     </head>
 
-    <body class="bg-white" x-data="{ openMenu: false }">
+    <body class="bg-white">
         <!-- Navbar section -->
         <nav class="z-30 hidden bg-white fixed w-full md:flex justify-between items-center mx-auto px-8 h-24 py-2 space-x-10">
 
@@ -127,7 +127,54 @@
         </div>
 
         <!-- Brands section -->
-        <div class="brands flex md:flex-row space-x-4 justify-center py-10 h-auto flex-col space-y-3">
+        <!-- mobile slides -->
+        <div class=" flex swiper-container brands-container">
+            <div class="swiper-wrapper mt-5 block md:flex items-center justify-center w-auto md:w-full md:space-x-4">
+                <div class="swiper-slide flex justify-center">
+                    <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg m-7 md:m-0">
+                        <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/binalot-min.png" alt="binalot"></div>
+                        <div class="text">1 for 1</div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg m-7 md:m-0">
+                        <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/cinabon-min.jpeg" alt="cinabon"></div>
+                        <div class="text">50%</div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg m-7 md:m-0">
+                        <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/goldilocks-min.jpeg" alt="goldilocks"></div>
+                        <div class="text">offer</div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg m-7 md:m-0">
+                        <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/greenp-min.png" alt="greenp"></div>
+                        <div class="text">Promotions</div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg m-7 md:m-0">
+                        <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/hawker-min.jpeg" alt="hawker"></div>
+                        <div class="text">Special</div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg m-7 md:m-0">
+                        <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/kenny-min.jpeg" alt="kenny"></div>
+                        <div class="text">90%</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-row items-center justify-evenly space-x-4">
+                    <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full px-5 py-3 group cursor-pointer hover:shadow-lg">
+                        <div class="text">View all</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="brands hidden md:flex md:flex-row space-x-4 justify-center py-10 h-auto flex-col space-y-3">
             <div class="flex flex-row items-center justify-evenly space-x-4">
                 <div class="brand flex flex-row space-x-4 items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 group cursor-pointer hover:shadow-lg">
                     <div class="image"><img class="object-cover rounded-full w-12 h-12" src="../assets/images/binalot-min.png" alt="binalot"></div>
@@ -163,7 +210,7 @@
                     <div class="text">View all</div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Category section -->
         <div class="category-section py-10">

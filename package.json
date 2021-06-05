@@ -32,6 +32,7 @@
     "lazysizes": "^5.3.2",
     "particles.js": "^2.0.0",
     "postcss-nesting": "^7.0.1",
+    "swiper": "^6.7.0",
     "tailwindcss": "^2.1.2"
   },
   "devDependencies": {

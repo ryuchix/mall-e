@@ -3,6 +3,7 @@
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,600');
 @import 'imagehover.css/css/imagehover.css';
+@import 'swiper/swiper-bundle.css';
 
 html,body {
     scroll-behavior: smooth;
@@ -112,4 +113,13 @@ html,body {
             @apply py-4;
         }
     }
+}
+
+.swiper-wrapper {
+    @apply w-auto;
+    @apply md:w-full;
+}
+
+.swiper-slide {
+    @apply md:w-max !important;
 }
